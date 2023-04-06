@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+</head>
+<body>
+    <center>
+        <h1>This is About Html File</h1>
+        <table border="3px">
+            <tr>
+                <th>player_name</th>
+                <th>Jersey_No</th>
+                <th>country</th>
+            </tr>
+
+            {% for ao in abouts %}
+            <tr>
+                <td>{{ao.player_name}}</td>
+                <td>{{ao.Jersey_No}}</td>
+                <td>{{ao.country}}</td>
+            </tr>
+                
+            {% endfor %}
+        </table>
+    </center>
+</body>
+</html>
