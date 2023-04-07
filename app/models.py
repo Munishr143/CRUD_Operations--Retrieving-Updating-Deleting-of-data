@@ -20,5 +20,6 @@ class About(models.Model):
     player_name=models.ForeignKey(Webpage, on_delete=models.CASCADE)
     Jersey_No=models.IntegerField(primary_key=True)
     country=models.CharField(max_length=25)
+    date=models.DateField(default='2021-11-22')
     def __str__(self):
         return self.country
