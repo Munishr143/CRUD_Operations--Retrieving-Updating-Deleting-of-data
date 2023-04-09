@@ -12,13 +12,17 @@ def display_topic(request):
 
 def display_webpage(request):
     LOW=Webpage.objects.all()
-    # LOW=Webpage.objects.order_by('player_name')
-    # LOW=Webpage.objects.order_by('-player_name')
-    # LOW=Webpage.objects.order_by(Length('player_name'))
-    # LOW=Webpage.objects.order_by(Length('player_name').desc())
-    # LOW=Webpage.objects.filter(player_name='DSP')
+    LOW=Webpage.objects.order_by('player_name')
+    LOW=Webpage.objects.order_by('-player_name')
+    LOW=Webpage.objects.order_by(Length('player_name'))
+    LOW=Webpage.objects.order_by(Length('player_name').desc())
+    LOW=Webpage.objects.filter(player_name='DSP')
     LOW=Webpage.objects.exclude(player_name='MS Dhoni')
-
+    LOW=Webpage.objects.filter(player_name__startswith='D')
+    LOW=Webpage.objects.filter(player_name__endswith='I')
+    LOW=Webpage.objects.filter(player_name__in=('Messi', 'DSP'))
+    LOW=Webpage.objects.filter(player_name__contains='s')
+    LOW=Webpage.objects.filter(Email__regex=r'yahoo')
 
 
 
@@ -29,6 +33,14 @@ def display_webpage(request):
 def display_about(request):
     LOA=About.objects.all()
     LOA=About.objects.filter(date__gt='2021-10-01')
+    LOA=About.objects.filter(date__lt='2021-10-01')
+    LOA=About.objects.filter(date__lte='2021-10-05')
+    LOA=About.objects.filter(date__gte='2021-10-05')
+    LOA=About.objects.filter(date__year='2021')
+    LOA=About.objects.filter(date__month__gt='05')
+    LOA=About.objects.filter(date__day='16')
+
+
 
 
     
